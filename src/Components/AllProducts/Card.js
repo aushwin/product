@@ -1,6 +1,9 @@
-const Card = ({title,image,price,setProduct})=>{
+import { Link } from "react-router-dom"
+
+const Card = ({title,image,price,setProduct,id})=>{
     
-    return <div className="w-48 h-96 m-2 text-center flex justify-between flex-col hover:bg-gray-200 cursor-pointer">
+    return <Link to={`/Product?id=${id}`}>
+    <div className="w-48 h-96 m-2 text-center flex justify-between flex-col hover:bg-gray-200 cursor-pointer">
         <div>
             {title}
         </div>
@@ -10,7 +13,7 @@ const Card = ({title,image,price,setProduct})=>{
         <div>
           price - {price}
         </div>
-    </div>
+    </div></Link>
 }
 
 export default Card

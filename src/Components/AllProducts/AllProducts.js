@@ -1,12 +1,9 @@
 import axios from "axios"
 import {useEffect, useState } from "react"
-import Product from "../Product/Product"
 import Card from "./Card"
 
 const AllProducts = () =>{
     const [data ,setData] = useState([])
-    const [singleProduct,SetSingleProduct] = useState('')
-    const [showProduct,setShowProduct] = useState(false)
     
     useEffect(()=>{
       const fetchData = async()=>{
@@ -18,8 +15,8 @@ const AllProducts = () =>{
     },[])
 
     return <div className="flex flex-wrap">
-       {showProduct ? <Product /> : data.map((element)=>{
-            return <Card title={element.title} setProduct={SetSingleProduct} image={element.image} price={element.price} />
+       { data.map((element)=>{
+            return <Card id={element.id} title={element.title} image={element.image} price={element.price} />
         })}
     </div>
 }

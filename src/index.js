@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { DataContext } from './Components/dataContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   <DataContext.Provider value={'data'}>
+   <BrowserRouter >
       <App />
-   </DataContext.Provider>
+      </BrowserRouter>
+  
   
 );
